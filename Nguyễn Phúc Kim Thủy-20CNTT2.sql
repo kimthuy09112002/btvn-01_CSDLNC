@@ -184,9 +184,9 @@ WHERE firstname IN
 --Xóa 4 nhân viên đầu tiên có công việc là 'Sales Rep' sau khi sắp xếp theo extension
 
 DELETE FROM Employees 
-WHERE jobTitle = 'Sales Rep' AND extention IN
+WHERE extention IN
 (
-	SELECT TOP(4) extention FROM Employees ORDER BY extention
+	SELECT TOP(4) extention FROM Employees WHERE jobTitle = 'Sales Rep' ORDER BY extention
 )
 
 
